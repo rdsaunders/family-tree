@@ -1,0 +1,3 @@
+---
+title: Reginald Arthur Wilson
+---

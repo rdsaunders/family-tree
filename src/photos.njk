@@ -1,0 +1,18 @@
+---
+title: "Photos"
+layout: base
+pagination:
+  data: collections.media
+  reverse: true
+  size: 36
+eleventyNavigation:
+  key: Photos
+---
+<div class="container">
+
+<ul>
+    {% for item in pagination.items %}
+        <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+    {% endfor %}
+</ul>
+</div>
