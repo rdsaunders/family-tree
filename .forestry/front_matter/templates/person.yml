@@ -16,6 +16,7 @@ fields:
   name: birthPlace
   label: Birth Place
 pages:
+- src/people/charles-wilson.md
 - src/people/george-wilson.md
 - src/people/richard-saunders.md
 - src/people/robert-wilson.md
