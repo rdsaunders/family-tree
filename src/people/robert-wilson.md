@@ -1,6 +1,7 @@
 ---
 title: Robert Wilson
-birthDate:
+birthDate: 
 birthDateApprox: 1773
 birthPlace: Icklesham, Sussex, England
+
 ---

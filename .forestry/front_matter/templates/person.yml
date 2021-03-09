@@ -16,4 +16,5 @@ fields:
   name: birthPlace
   label: Birth Place
 pages:
+- src/people/robert-wilson.md
 - src/people/wiliam-lawrence-wilson.md
