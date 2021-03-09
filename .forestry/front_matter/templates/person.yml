@@ -1,0 +1,13 @@
+---
+label: Person
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: birthDate
+  label: birthDate
+- type: text
+  name: birthPlace
+  label: birthPlace
