@@ -15,3 +15,5 @@ fields:
 - type: text
   name: birthPlace
   label: Birth Place
+pages:
+- src/people/wiliam-lawrence-wilson.md
