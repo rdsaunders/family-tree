@@ -4,10 +4,14 @@ hide_body: true
 fields:
 - type: text
   name: title
-  label: title
+  label: Name
 - type: datetime
   name: birthDate
-  label: birthDate
+  label: Birth Date
+  config:
+    date_format: YYYY/MM/DD
+    display_utc: true
+    export_format: YYYY-MM-DD
 - type: text
   name: birthPlace
-  label: birthPlace
+  label: Birth Place
