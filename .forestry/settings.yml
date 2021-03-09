@@ -9,6 +9,7 @@ sections:
   label: People
   create: documents
   match: "**/*"
+  exclude: "*.json"
   new_doc_ext: md
 - type: directory
   path: src/media
