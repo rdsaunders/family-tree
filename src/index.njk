@@ -1,9 +1,23 @@
 ---
 layout: base
+pagination:
+  data: collections.person
+  reverse: true
+  size: 36
 eleventyNavigation:
   key: Home
 ---
 
 <div class="container">
-    <h1>A blank 11ty project.</h1>
+    <h1>The Wilson &amp; Ward family history</h1>
+    <p>This is the history of the Wilson family, and the Ward family who were joined together in marriage in 1935. The family line had to be researched ‘backwards’. Moving from what we know to what we would like to know. This done, the family history can now be written in the order that it happened.</p>
+
+    <p>The information has been gathered from personal memories, the Registrar for Births, Deaths and Marriages, the Census returns including the 1939 register. The personal memories and photographs provide a richness to the lives that this family history documents, but the research has had to largely rely on written sources.</p>
+    
+    <h2>Latest updates</h2>
+    <ul>
+    {% for item in pagination.items %}
+        <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+    {% endfor %}
+</ul>
 </div>
