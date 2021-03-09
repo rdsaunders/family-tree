@@ -4,25 +4,45 @@ hide_body: true
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
 - type: text
   name: caption
-  label: caption
-- type: text
-  name: description
-  label: description
-- type: text
-  name: transcription
-  label: transcription
-- type: text
-  name: date
-  label: date
+  label: Caption
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- name: transcription
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Transcription
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: DD MMM YYYY
+    time_format: 
+    display_utc: false
+    export_format: YYYY-MM-DD
 - type: text
   name: copyright
-  label: copyright
+  label: Copyright
 - type: text
   name: location
-  label: location
-- type: text
-  name: images
-  label: images
+  label: Location
+- name: images
+  type: image_gallery
+  config: {}
+  label: Images
