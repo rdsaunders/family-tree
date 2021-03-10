@@ -1,6 +1,7 @@
 ---
 title: Richard Saunders
-birthDate: 1983-11-27
+date: 1983-11-27
 birthPlace: Haverfordwest, Wales
-
+deathDate:
+deathPlace:
 ---

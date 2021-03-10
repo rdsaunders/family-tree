@@ -1,6 +1,7 @@
 ---
 title: Reginald Arthur Wilson
-birthDate: 1910-02-25
+date: 1910-02-25
 birthPlace: Portsmouth, Hampshire, England
-
+deathDate:
+deathPlace:
 ---
