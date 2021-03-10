@@ -19,7 +19,7 @@ sections:
   exclude: "*.json"
   templates:
   - media
-upload_dir: content/media
+upload_dir: src/content/media
 public_path: "/content/media"
 front_matter_path: ''
 use_front_matter_path: false
