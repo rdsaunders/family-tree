@@ -74,5 +74,3 @@ fields:
   showOnly:
     field: mediaType
     value: Document
-pages:
-- src/media/000001.md
