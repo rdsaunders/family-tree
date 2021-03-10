@@ -64,7 +64,7 @@ fields:
   config:
     min: 
     max: 
-    labelField: 
+    labelField: people
   label: Linked to
 pages:
 - src/media/000001.md
