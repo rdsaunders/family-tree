@@ -34,6 +34,12 @@ fields:
       file: 
       path: 
   label: Media type
+- type: text
+  name: caption
+  label: Caption
+  showOnly:
+    field: mediaType
+    value: Portrait
 - name: date
   type: datetime
   label: Date
@@ -56,12 +62,6 @@ fields:
     schema:
       format: markdown
   label: Description
-- type: text
-  name: caption
-  label: Caption
-  showOnly:
-    field: mediaType
-    value: Portrait
 - name: transcription
   type: textarea
   default: ''
