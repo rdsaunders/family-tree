@@ -15,6 +15,21 @@ fields:
 - type: text
   name: birthPlace
   label: Birth Place
+- name: deathDate
+  type: datetime
+  label: Death Date
+  description: ''
+  config:
+    required: false
+    date_format: DD DDD YYYY
+    time_format: 
+    display_utc: false
+    export_format: YYYY-MM-DD
+- name: deathPlace
+  type: text
+  config:
+    required: false
+  label: Death Place
 pages:
 - src/people/charles-wilson.md
 - src/people/doris-adeline-ward.md
