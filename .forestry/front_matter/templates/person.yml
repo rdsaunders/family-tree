@@ -45,5 +45,10 @@ fields:
   config:
     required: false
   label: Death Place
+- name: parents
+  type: include
+  config: {}
+  template: partial-parents
+  label: Parents
 pages:
 - src/content/people/wiliam-lawrence-wilson.md
