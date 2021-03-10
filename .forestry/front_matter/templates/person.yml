@@ -52,4 +52,5 @@ fields:
   template: partial-parents
   label: Parents
 pages:
+- src/content/people/rhoda-freeman.md
 - src/content/people/wiliam-lawrence-wilson.md
