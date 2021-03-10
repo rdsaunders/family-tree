@@ -46,25 +46,15 @@ fields:
   type: image_gallery
   config: {}
   label: Images
-- name: linkedTo
-  type: field_group_list
-  fields:
-  - name: people
-    type: select
-    default: []
-    config:
-      required: false
-      options: []
-      source:
-        type: pages
-        section: people
-        file: 
-        path: 
-    label: People
+- name: relatedPeople
+  type: list
   config:
+    use_select: true
     min: 
     max: 
-    labelField: people
+    source:
+      type: pages
+      section: people
   label: Linked to
 pages:
 - src/media/000001.md
