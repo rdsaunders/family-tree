@@ -4,7 +4,7 @@ hide_body: true
 fields:
 - type: text
   name: title
-  label: Title
+  label: Reference ID
 - name: images
   type: image_gallery
   config: {}
@@ -19,6 +19,25 @@ fields:
       type: pages
       section: people
   label: Linked to
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: DD MMM YYYY
+    time_format: 
+    display_utc: false
+    export_format: YYYY-MM-DD
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
 - name: mediaType
   type: select
   default: Portrait
@@ -34,31 +53,12 @@ fields:
       file: 
       path: 
   label: Media type
-- name: date
-  type: datetime
-  label: Date
-  description: ''
-  config:
-    required: false
-    date_format: DD MMM YYYY
-    time_format: 
-    display_utc: false
-    export_format: YYYY-MM-DD
 - type: text
   name: copyright
   label: Copyright
 - type: text
   name: location
   label: Location
-- name: description
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Description
 - type: text
   name: caption
   label: Caption
