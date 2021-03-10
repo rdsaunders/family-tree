@@ -5,5 +5,7 @@ birthPlace: Hastings, Sussex, England
 deathDate: 1966-02-16
 deathPlace: Portsmouth, Hampshire, England
 gender: Male
+father: src/content/people/george-wilson.md
+mother: ''
 
 ---
