@@ -1,4 +1,28 @@
 ---
 label: 'Partial: Parents'
 hide_body: true
-fields: []
+fields:
+- name: father
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: people-b798c8c1-5b7d-4fcd-a337-4f654f8530d6
+      file: 
+      path: 
+  label: Father
+- name: mother
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: people-b798c8c1-5b7d-4fcd-a337-4f654f8530d6
+      file: 
+      path: 
+  label: Mother
