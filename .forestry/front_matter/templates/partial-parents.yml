@@ -1,6 +1,7 @@
 ---
 label: 'Partial: Parents'
 hide_body: true
+display_field: father
 fields:
 - name: father
   type: select
