@@ -5,27 +5,35 @@ fields:
 - type: text
   name: title
   label: Title
-- type: text
-  name: caption
-  label: Caption
-- name: description
-  type: textarea
-  default: ''
+- name: images
+  type: image_gallery
+  config: {}
+  label: Images
+- name: relatedPeople
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: pages
+      section: people
+  label: Linked to
+- name: mediaType
+  type: select
+  default: Portrait
   config:
     required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Description
-- name: transcription
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Transcription
+    options:
+    - Portrait
+    - Headstone
+    - Document
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Media type
 - name: date
   type: datetime
   label: Date
@@ -42,20 +50,33 @@ fields:
 - type: text
   name: location
   label: Location
-- name: images
-  type: image_gallery
-  config: {}
-  label: Images
-- name: relatedPeople
-  type: list
+- name: description
+  type: textarea
+  default: ''
   config:
-    use_select: true
-    min: 
-    max: 
-    source:
-      type: pages
-      section: people
-  label: Linked to
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- type: text
+  name: caption
+  label: Caption
+  showOnly:
+    field: mediaType
+    value: Portrait
+- name: transcription
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Transcription
+  showOnly:
+    field: mediaType
+    value: Document
 pages:
 - src/media/000001.md
 - src/media/000002.md
