@@ -5,6 +5,21 @@ fields:
 - type: text
   name: title
   label: Name
+- name: gender
+  type: select
+  default: Male
+  config:
+    required: false
+    options:
+    - Male
+    - Female
+    - Unknown
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Gender
 - type: datetime
   name: date
   label: Birth Date
@@ -30,21 +45,6 @@ fields:
   config:
     required: false
   label: Death Place
-- name: gender
-  type: select
-  default: Male
-  config:
-    required: false
-    options:
-    - Male
-    - Female
-    - Unknown
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Gender
 pages:
 - src/people/charles-wilson.md
 - src/people/doris-adeline-ward.md
