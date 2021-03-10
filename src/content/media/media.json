@@ -1,0 +1,6 @@
+{
+    "tags": "media",
+    "layout": "media",
+    "permalink": "media/{{ title | slug }}/index.html"
+
+}

@@ -1,0 +1,6 @@
+{
+    "tags": "person",
+    "layout": "person",
+    "permalink": "people/{{ title | slug }}/index.html"
+
+}
