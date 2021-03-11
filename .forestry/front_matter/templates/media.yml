@@ -17,7 +17,7 @@ fields:
     max: 
     source:
       type: pages
-      section: people
+      section: people-b798c8c1-5b7d-4fcd-a337-4f654f8530d6
   label: Linked to
 - name: mediaType
   type: select
