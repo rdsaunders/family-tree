@@ -22,7 +22,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Birth date", name: "date", widget: "datetime" }
       - { label: "Birth place", name: "birthPlace", widget: "string" }
-      - { label: "Death date", name: "date", widget: "datetime" }
+      - { label: "Death date", name: "deathdate", widget: "datetime" }
       - { label: "Death place", name: "deathPlace", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - widget: select
