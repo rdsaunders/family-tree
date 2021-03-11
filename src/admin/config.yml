@@ -22,9 +22,9 @@ collections:
     summary: "{{title}}: {{date}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Birth date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false }
+      - { label: "Birth date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "" }
       - { label: "Birth place", name: "birthPlace", widget: "string" }
-      - { label: "Death date", name: "deathdate", widget: "datetime", date_format: "DD MMM YYYY", time_format: false }
+      - { label: "Death date", name: "deathdate", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "" }
       - { label: "Death place", name: "deathPlace", widget: "string" }
       - widget: select
         label: "Gender"
@@ -61,7 +61,7 @@ collections:
         create: false
         options: ["Portrait", "Headstone", "Document"]
       - { label: "Caption", name: "caption", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Transcription", name: "transcription", widget: "string" }
