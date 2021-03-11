@@ -1,0 +1,66 @@
+backend:
+  # Use netlify identity as backend
+  name: git-gateway
+  branch: master
+  ### enable below lines for github integration ###
+  # name: github
+  # repo: surjithctly/neat-starter
+media_folder: "src/static/img"
+public_folder: "/static/img"
+
+# Please run "npx netlify-cms-proxy-server" for local backend
+local_backend: true
+# publish_mode: editorial_workflow
+collections:
+  - label: "People"
+    name: "people"
+    folder: "src/content/people"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Birth date", name: "date", widget: "datetime" }
+      - { label: "Birth place", name: "birthPlace", widget: "string" }
+      - { label: "Death date", name: "date", widget: "datetime" }
+      - { label: "Death place", name: "deathPlace", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - widget: select
+        label: "Gender"
+        name: "gender"
+        multiple: false
+        create: false
+        options: ["Male", "Female", "Unknown"]
+  - label: "Media"
+    name: "media"
+    folder: "src/content/media"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Reference ID", name: "title", widget: "string" }
+      - label: "Images"
+        name: "images"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
+            media_folder: "/src/assets/media"
+      - label: "Linked to"
+        name: "relatedPeople"
+        widget: "relation"
+        collection: "people"
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title", "date"]
+      - widget: select
+        label: "Media type"
+        name: "mediaType"
+        multiple: false
+        create: false
+        options: ["Portrait", "Headstone", "Document"]
+      - { label: "Caption", name: "caption", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Transcription", name: "transcription", widget: "string" }
