@@ -21,8 +21,8 @@ sections:
   exclude: "*.json"
   templates:
   - media
-upload_dir: src/content/media
-public_path: "/content/media"
+upload_dir: src/assets/media
+public_path: "/assets/media"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
