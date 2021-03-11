@@ -19,7 +19,7 @@ collections:
     create: true
     editor:
       preview: true
-    summary: "{{title}}: ({{date | date: "%Y"}}-{{deathDate | date: "%Y"}})"
+    summary: "{{title}}: ({{date}}-{{deathDate}})"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Birth date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false }
