@@ -17,14 +17,13 @@ collections:
     folder: "src/content/people"
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Birth date", name: "date", widget: "datetime" }
+      - { label: "Birth date", name: "date", widget: "datetime", format: "DD MMM YYYY" }
       - { label: "Birth place", name: "birthPlace", widget: "string" }
       - { label: "Death date", name: "deathdate", widget: "datetime" }
       - { label: "Death place", name: "deathPlace", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
       - widget: select
         label: "Gender"
         name: "gender"
@@ -60,7 +59,7 @@ collections:
         create: false
         options: ["Portrait", "Headstone", "Document"]
       - { label: "Caption", name: "caption", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Date", name: "date", widget: "datetime", format: "DD MMM YYYY" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Transcription", name: "transcription", widget: "string" }
