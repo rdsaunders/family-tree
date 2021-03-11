@@ -14,6 +14,7 @@ local_backend: true
 collections:
   - label: "People"
     name: "people"
+    label_singular: "person"
     folder: "src/content/people"
     create: true
     editor:
