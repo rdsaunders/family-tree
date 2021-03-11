@@ -1,6 +1,7 @@
 ---
 label: Person
 hide_body: true
+display_field: title
 fields:
 - type: text
   name: title
@@ -45,12 +46,11 @@ fields:
   config:
     required: false
   label: Death Place
+- name: parents
+  type: include
+  config: {}
+  template: partial-parents
+  label: Parents
 pages:
-- src/people/charles-wilson.md
-- src/people/doris-adeline-ward.md
-- src/people/george-wilson.md
-- src/people/julie-wilson.md
-- src/people/reginald-arthur-wilson.md
-- src/people/richard-saunders.md
-- src/people/robert-wilson.md
-- src/people/wiliam-lawrence-wilson.md
+- src/content/people/rhoda-freeman.md
+- src/content/people/wiliam-lawrence-wilson.md

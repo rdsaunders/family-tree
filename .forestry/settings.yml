@@ -11,6 +11,8 @@ sections:
   match: "**/*"
   exclude: "*.json"
   new_doc_ext: md
+  templates:
+  - person
 - type: directory
   path: src/content/media
   label: Media
