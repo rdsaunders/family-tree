@@ -1,6 +1,7 @@
 ---
 label: Media
 hide_body: true
+display_field: title
 fields:
 - type: text
   name: title
@@ -74,5 +75,3 @@ fields:
   showOnly:
     field: mediaType
     value: Document
-pages:
-- src/content/media/00001.md
