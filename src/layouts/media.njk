@@ -1,8 +1,11 @@
 ---
 layout: base
 ---
-<article class="container">
+<article class="container | h-entry">
 <h1>{{ title }}</h1>
+{% for item in images %}
+    <img loading="lazy" src="{{ item }}" class="u-photo" />
+{% endfor %}
 <p>{{ date }}{{ location }}</p>
 {{ caption }}
 <small>{{ copyright }}</small>

@@ -3,6 +3,144 @@ layout: base
 ---
 <article class="container">
 <h1>{{ title }}</h1>
-<p><strong>Birth:</strong> {{ date | dateToFormat('dd MMMM yyyy') }}, {{ birthPlace }}</p>
-<p><strong>Death:</strong> {{ deathDate | dateToFormat('dd MMMM yyyy') }}, {{ deathPlace }}</p>
+<p>{{ date | dateToFormat('yyyy') }}-{{ deathDate | dateToFormat('yyyy') }}<p>
+
+<h2>Life facts</h2>
+<dl>
+<dt>Name</dt>
+<dd>{{ title }}</dd>
+</dl>
+<dl>
+<dt>Gender</dt>
+<dd>{{ gender }}</dd>
+</dl>
+<dt>Birth</dt>
+<dd>{{ date | dateToFormat('dd MMMM yyyy') }}</dd>
+<dd>{{ birthPlace }}</dd>
+</dl>
+<dt>Marriage</dt>
+<dd>{{ marriage.date }}</dd>
+<dd>{{ marriage.place }}</dd>
+</dl>
+<dt>Living status</dt>
+<dd>Living</dd>
+<dd>{{ deathDate | dateToFormat('dd MMMM yyyy') }}</dd>
+<dd>{{ deathPlace }}</dd>
+</dl>
+
+<h2>Media</h2>
+
+<ul>
+    <li>
+        <a href="">
+            <div class="card">
+                <div class="cardImg">
+                    <img src="" alt="Photo" />
+                </div>
+                <div class="cardContent">
+                    <p>Caption or filename</p>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <div class="card">
+                <div class="cardImg">
+                    <img src="" alt="Photo" />
+                </div>
+                <div class="cardContent">
+                    <p>Caption or filename</p>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
+
+
+<aside>
+<h2>Relations</h2>
+
+<h3>Parents</h3>
+<ul>
+    <li>
+        <a href="">
+            <div class="personCard">
+                <div class="personCardImg">
+                    <img src="" alt="Avatar or Photo" />
+                </div>
+                <div class="personCardContent">
+                    <small>Father</small>
+                    <h4>Fathers name</h4>
+                    <p>Year from - year to or Living</p>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <div class="personCard">
+                <div class="personCardImg">
+                    <img src="" alt="Avatar or Photo" />
+                </div>
+                <div class="personCardContent">
+                    <small>Mother</small>
+                    <h4>Mothers name</h4>
+                    <p>Year from - year to or Living</p>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
+
+<h3>Spouses and Children</h3>
+
+<ul>
+    <li>
+        <a href="">
+            <div class="personCard">
+                <div class="personCardImg">
+                    <img src="" alt="Avatar or Photo" />
+                </div>
+                <div class="personCardContent">
+                    <small>Spouse</small>
+                    <h4>Spouses name</h4>
+                    <p>Year from - year to or Living</p>
+                </div>
+            </div>
+        </a>
+        <ul>
+            <li>
+                <a href="">
+                    <div class="personCard">
+                        <div class="personCardImg">
+                            <img src="" alt="Avatar or Photo" />
+                        </div>
+                        <div class="personCardContent">
+                            <small>Child</small>
+                            <h4>Childs name</h4>
+                            <p>Year from - year to or Living</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="personCard">
+                        <div class="personCardImg">
+                            <img src="" alt="Avatar or Photo" />
+                        </div>
+                        <div class="personCardContent">
+                            <small>Child</small>
+                            <h4>Childs name</h4>
+                            <p>Year from - year to or Living</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+</aside>
+
 </article>
