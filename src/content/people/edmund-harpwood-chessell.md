@@ -3,10 +3,10 @@ gender: Male
 father: []
 mother: []
 title: Edmund Harpwood Chessell
-date: 1860-01-01
+date: 
 birthPlace: ''
 deathDate: 
 deathPlace: ''
-dobEst: true
+dobEst: Abt. 1860
 
 ---
