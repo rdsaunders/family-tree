@@ -11,4 +11,10 @@ layout: base
 <small>{{ copyright }}</small>
 <div>{{ description }}</div>
 <div>{{ transcription }}</div>
+<h2>Related people</h2>
+<ul>
+{% for item in relatedPeople %}
+    <li>{{ item }}</li>
+{% endfor %}
+</ul>
 </article>
