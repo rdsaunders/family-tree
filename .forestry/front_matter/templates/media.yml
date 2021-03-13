@@ -76,6 +76,18 @@ fields:
     schema:
       format: markdown
   label: Transcription
+- name: similarTo
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: media-d9db5207-3627-4949-a53c-158e2fa0f691
+      file: 
+      path: 
+  label: Similar to
 pages:
 - src/content/media/00002.md
 - src/content/media/00003.md
