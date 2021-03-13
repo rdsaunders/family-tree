@@ -51,7 +51,7 @@ fields:
   description: ''
   config:
     required: false
-    date_format: DD MMM YYYY
+    date_format: ''
     time_format: 
     display_utc: false
     export_format: YYYY-MM-DD
