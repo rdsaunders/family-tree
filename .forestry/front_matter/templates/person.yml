@@ -52,6 +52,7 @@ fields:
   template: partial-parents
   label: Parents
 pages:
+- src/content/people/ann-wilson.md
 - src/content/people/florence-julia-entwistle.md
 - src/content/people/margaret-ann-wilson.md
 - src/content/people/rhoda-freeman.md
