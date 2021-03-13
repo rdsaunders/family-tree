@@ -13,11 +13,7 @@ eleventyNavigation:
 
 <ul>
     {% for item in pagination.items %}
-         <li>
-          {% for photo in item.data.images %}
-          <img src="{{ photo }}" />
-          {% endfor %}
-   <a href="{{ item.url }}">{{ item.data.title }}</a></li>
+         <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
     {% endfor %}
 </ul>
 </div>
