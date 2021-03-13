@@ -28,6 +28,9 @@ fields:
     date_format: DD MMM YYYY
     display_utc: true
     export_format: YYYY-MM-DD
+- name: dobEst
+  type: boolean
+  label: Estimated DOB
 - type: text
   name: birthPlace
   label: Birth Place
