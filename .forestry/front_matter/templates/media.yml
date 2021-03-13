@@ -10,6 +10,10 @@ fields:
   type: image_gallery
   config: {}
   label: Images
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
 - name: relatedPeople
   type: list
   config:
