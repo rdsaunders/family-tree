@@ -29,8 +29,10 @@ fields:
     display_utc: true
     export_format: YYYY-MM-DD
 - name: dobEst
-  type: boolean
-  label: Estimated DOB
+  type: text
+  config:
+    required: false
+  label: Estimated Date of Birth
 - type: text
   name: birthPlace
   label: Birth Place
