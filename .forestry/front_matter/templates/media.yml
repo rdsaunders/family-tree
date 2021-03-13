@@ -75,3 +75,5 @@ fields:
   showOnly:
     field: mediaType
     value: Document
+pages:
+- src/content/media/00002.md
