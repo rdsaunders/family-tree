@@ -55,6 +55,9 @@ fields:
     time_format: 
     display_utc: false
     export_format: ''
+- name: dateApprox
+  type: boolean
+  label: Date approximate
 - type: text
   name: location
   label: Location
