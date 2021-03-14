@@ -2,7 +2,7 @@
 gender: Male
 father: []
 mother: []
-title: Rory Watson
+title: George Rory Watson
 date: 
 dobEst: ''
 birthPlace: ''
