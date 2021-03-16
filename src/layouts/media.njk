@@ -2,13 +2,27 @@
 layout: base
 ---
 <article class="container | h-entry">
-<h1>{{ title }}</h1>
+<h1>{% if item.data.caption %}
+        {{ item.data.caption }}
+    {% else %}
+        {{ title }}
+    {% endif %}
+</h1>
 {% for item in images %}
     <img loading="lazy" src="{{ item }}" class="u-photo" width="600" />
 {% endfor %}
-<p>{{ date }}{{ location }}</p>
+<dl>
+    {% if item.data.date %}
+    <dt>Date:</dt>
+    <dd>{{ date }}</dd>
+    {% endif %}
+    {% if item.data.location %}
+    <dt>Location:</dt>
+    <dd>{{ location }}</dd>
+    {% endif %}
+</dl>
 {{ caption }}
-<small>{{ copyright }}</small>
+
 <div>{{ description }}</div>
 <div>{{ transcription }}</div>
 <h2>Related people</h2>

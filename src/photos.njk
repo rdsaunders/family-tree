@@ -4,16 +4,31 @@ layout: base
 pagination:
   data: collections.media
   reverse: true
-  size: 36
+  size: 50
 eleventyNavigation:
   key: Photos
 ---
 <div class="container">
     <h1>{{ title }}</h1>
 
-<ul>
+<ul class="card-group">
     {% for item in pagination.items %}
-         <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+        <li class="card-group__item grid-column-one-third">
+          <div class="card">
+            <img class="card__img" src="{{ item.data.images | first }}" width="200" loading="lazy"/>
+            <div class="card__content">
+              <div class="card__heading"><a href="{{ item.url }}">
+              {% if item.data.caption %}
+                {{ item.data.caption }}
+              {% else %}
+                {{ item.data.title }}
+              {% endif %}
+              </a>
+              </div>
+              <p class="card__description">{{ item.data.description }}</p>
+            </div>
+          </div>
+        </li>
     {% endfor %}
 </ul>
 </div>
