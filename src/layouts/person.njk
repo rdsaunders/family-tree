@@ -6,26 +6,32 @@ layout: base
 <p>{{ date | dateToFormat('yyyy') }}-{{ deathDate | dateToFormat('yyyy') }}<p>
 
 <h2>Life facts</h2>
-<dl>
-<dt>Name</dt>
-<dd>{{ title }}</dd>
-</dl>
-<dl>
-<dt>Gender</dt>
-<dd>{{ gender }}</dd>
-</dl>
-<dt>Birth</dt>
-<dd>{{ date | dateToFormat('dd MMMM yyyy') }}</dd>
-<dd>{{ birthPlace }}</dd>
-</dl>
-<dt>Marriage</dt>
-<dd>{{ marriage.date }}</dd>
-<dd>{{ marriage.place }}</dd>
-</dl>
-<dt>Living status</dt>
-<dd>Living</dd>
-<dd>{{ deathDate | dateToFormat('dd MMMM yyyy') }}</dd>
-<dd>{{ deathPlace }}</dd>
+<dl class="summary-list">
+    <div class="summary-list__row">
+        <dt class="summary-list__key">Name</dt>
+        <dd class="summary-list__value">{{ title }}</dd>
+    </div>
+    <div class="summary-list__row">
+        <dt class="summary-list__key">Gender</dt>
+        <dd class="summary-list__value">{{ gender }}</dd>
+    </div>
+
+    <div class="summary-list__row">
+        <dt class="summary-list__key">Birth</dt>
+        <dd class="summary-list__value">{{ date | dateToFormat('dd MMMM yyyy') }} {% if birthPlace %}<br> {{ birthPlace }}{% endif %}</dd>
+    </div>
+    
+    {% if item.data.marriage.date %}
+    <div class="summary-list__row">
+        <dt class="summary-list__key">Marriage</dt>
+        <dd class="summary-list__value">{{ marriage.date }} <br> {{ marriage.place }}</dd>
+    </div>
+    {% endif %}
+
+    <div class="summary-list__row">
+        <dt class="summary-list__key">Living status</dt>
+        <dd class="summary-list__value">Living <br> {{ deathDate | dateToFormat('dd MMMM yyyy') }} {% if deathPlace %}<br> {{ deathPlace }}{% endif %}</dd>
+    </div>
 </dl>
 
 <h2>Media</h2>

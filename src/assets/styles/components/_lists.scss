@@ -1,0 +1,49 @@
+.summary-list {
+display: table;
+table-layout: fixed;
+width: 100%;
+margin: 0;
+
+    &__row {
+        border-bottom: 1px solid #d8dde0;
+        margin-bottom: 16px;
+
+        @include mq(md) {
+            display: table-row;
+        }
+    }
+
+    &__key,
+    &__value {
+        margin: 0;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+
+        @include mq(md) {
+            border-bottom: 1px solid #d8dde0;
+            display: table-cell;
+            padding-bottom: 8px;
+            padding-right: 24px;
+            padding-top: 8px;        }
+
+    }
+
+    &__key {
+        font-weight: 600;
+        margin-bottom: 4px;
+
+        @include mq(md) {
+            width: 30%;
+        }
+    }
+
+    &__value {
+        margin-bottom: 16px;
+
+        @include mq(md) {
+            width: 50%;
+        }
+    }
+
+}
