@@ -57,6 +57,7 @@ fields:
   template: partial-parents
   label: Parents
 pages:
+- src/content/people/alice-mary-valler.md
 - src/content/people/ann-wilson.md
 - src/content/people/edmund-harpwood-chessell.md
 - src/content/people/florence-julia-entwistle.md
