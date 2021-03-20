@@ -14,6 +14,12 @@ fields:
   type: tag_list
   default: []
   label: Tags
+- name: paperId
+  type: tag_list
+  default: []
+  label: Photo Paper ID
+  description: Any unique paper ID markings on the back of the photo to help group
+    sets.
 - name: relatedPeople
   type: list
   config:
