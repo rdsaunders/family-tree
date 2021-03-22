@@ -4,7 +4,7 @@ layout: base
 pagination:
   data: collections.media
   reverse: true
-  size: 50
+  size: 100
 eleventyNavigation:
   key: Photos
 ---
@@ -15,7 +15,7 @@ eleventyNavigation:
     {% for item in pagination.items %}
         <li class="card-group__item grid-column-one-third">
           <div class="card">
-            <img class="card__img" src="{{ meta.cloudinary_url }}image/upload/w_200,f_auto/family_tree{{ item.data.images | first }}" width="200" loading="lazy"/>
+            <img class="card__img" src="{{ meta.cloudinary_url }}image/upload/w_480,f_auto/family_tree{{ item.data.images | first }}" width="480" loading="lazy"/>
             <div class="card__content">
               <div class="card__heading"><a href="{{ item.url }}">
               {% if item.data.caption %}
