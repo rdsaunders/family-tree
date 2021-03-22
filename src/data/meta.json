@@ -3,5 +3,7 @@
     "description": "The family history of the Wilson and Ward lines",
     "url": "https://wilsonward.netlify.app/",
     "lang": "en",
-    "locale": "en_gb"
+    "locale": "en_gb",
+    "cloudinary_url": "https://res.cloudinary.com/rdsaunders/"
+
 }
