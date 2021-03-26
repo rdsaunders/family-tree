@@ -5,8 +5,8 @@ backend:
   ### enable below lines for github integration ###
   # name: github
   # repo: surjithctly/neat-starter
-media_folder: "src/static/img"
-public_folder: "/static/img"
+media_folder: "src/assets/media"
+public_folder: "/assets/media"
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
@@ -35,6 +35,7 @@ collections:
   - label: "Media"
     name: "media"
     folder: "src/content/media"
+    summary: "{{title}}: {{caption}}"
     create: true
     editor:
       preview: false
@@ -42,12 +43,13 @@ collections:
       - { label: "Reference ID", name: "title", widget: "string" }
       - label: "Images"
         name: "images"
-        widget: "image"
+        widget: "list"
+        summary: '{{fields.image}}'
+        collapsed: false
         required: false
-        media_library:
-          config:
-            multiple: true
-            media_folder: "/src/assets/media"
+        field: {label: Image, name: image, widget: image}
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Comma separated keywords that describe the image." }
+      - { label: "Photo Paper ID", name: "paperId", widget: "list", required: false, hint: "Any unique paper ID markings on the back of the photo to help group sets." }
       - label: "Linked to"
         name: "relatedPeople"
         widget: "relation"
@@ -56,14 +58,26 @@ collections:
         value_field: "title"
         display_fields: ["title", "date"]
         required: false
+        multiple: true
+        hint: "Link to people that you can identify in the photo"
       - widget: select
         label: "Media type"
         name: "mediaType"
         multiple: false
         create: false
         options: ["Portrait", "Headstone", "Document"]
+        default: "Portrait"
       - { label: "Caption", name: "caption", widget: "string", required: false }
       - { label: "Date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "", required: false}
       - { label: "Location", name: "location", widget: "string", required: false}
       - { label: "Description", name: "description", widget: "string", required: false}
       - { label: "Transcription", name: "transcription", widget: "string", required: false}
+      - label: "Similar to"
+        name: "similarTo"
+        widget: "relation"
+        collection: "media"
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title", "date"]
+        required: false
+        multiple: true

@@ -1,6 +1,6 @@
 ---
 gender: Female
-father: src/content/people/reginald-arthur-wilson.md
+father: Reginald Arthur Wilson
 mother: src/content/people/doris-adeline-ward.md
 title: Ann Wilson
 date: 
