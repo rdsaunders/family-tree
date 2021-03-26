@@ -9,9 +9,9 @@ eleventyNavigation:
 
 <h1>Tags</h1>
 
-{% for tag in collections.tagList | filterTagList %}
+{% for tag in collections.tagList | filterTagList  %}
   {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="tag tag--white">{{ tag }}</a>
+  <a href="{{ tagUrl | url }}" class="tag tag--white tag--large">{{ tag }}</a>
 {% endfor %}
 
 </div>

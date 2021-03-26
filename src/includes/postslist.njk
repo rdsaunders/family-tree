@@ -2,7 +2,8 @@
   {% for post in postslist | reverse %}
     <li class="card-group__item grid-column-one-third">
       <div class="card">
-        <img class="card__img" src="{{ meta.cloudinary_url }}image/upload/w_480,f_auto/family_tree{{ post.data.images }}" width="480" loading="lazy"/>
+
+        <img class="card__img" src="{{ meta.cloudinary_url }}image/upload/w_480,f_auto/family_tree{{ post.data.images[0] }}" width="480" loading="lazy"/>
 
         <div class="card__content">
           <div class="card__heading">
@@ -16,11 +17,24 @@
           </div>
           <p class="card__description">{{ post.data.description }}</p>
 
-            {% if post.data.date %}<p><time class="postlist-date" datetime="{{ post.data.date }}">{{ post.data.date | dateToFormat('dd MMMM yyyy') }}</time></p>{% endif %}
-            {% for tag in post.data.tags | filterTagList %}
-                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                  <a href="{{ tagUrl | url }}" class="tag tag--white">{{ tag }}</a>
-            {% endfor %}
+          {% if post.data.date %}<p><time class="postlist-date" datetime="{{ post.data.date }}">{{ post.data.date | dateToFormat('dd MMMM yyyy') }}</time></p>{% endif %}
+
+          {%- if post.data.images | length > 1 -%}
+          <div class="u-mb1">
+          {% icon "photo" %}
+          {{ post.data.images | length }} photos in this post.
+          </div>
+          {%- endif -%}
+          
+          {% if post.data.tags %}
+          <p class="u-mb0">
+          {% for tag in post.data.tags | filterTagList %}
+              {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+              <a href="{{ tagUrl | url }}" class="tag tag--white">{{ tag }}</a>
+          {% endfor %}
+          </p>
+          {%- endif -%}
+
         </div>
       </li>
     {% endfor %}
