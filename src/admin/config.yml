@@ -62,7 +62,7 @@ collections:
         multiple: false
         create: false
         options: ["Portrait", "Headstone", "Document"]
-      - { label: "Caption", name: "caption", widget: "string" }
+      - { label: "Caption", name: "caption", widget: "string", required: false }
       - { label: "Date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "", required: false }
       - { label: "Location", name: "location", widget: "string", required: false}
       - { label: "Description", name: "description", widget: "string", required: false }
