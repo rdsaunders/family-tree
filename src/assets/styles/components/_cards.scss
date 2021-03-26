@@ -1,33 +1,29 @@
 .card {
-width: 100%;
-position: relative;
-background: #fff;
-
+    width: 100%;
+    position: relative;
+    background: #fff;
 
     &__img {
-width: 100%;
-display: block;
+        width: 100%;
+        display: block;
     }
     &__content {
         position: relative;
         padding: 24px;
         border: 1px solid #d8dde0;
         border-bottom: 4px solid #d8dde0;
-
-
     }
-    &__heading {}
-    &__description {}
-
+    &__heading {
+    }
+    &__description {
+    }
 }
 
 .card-group {
-
-   margin-left: -16px;
+    margin-left: -16px;
     margin-right: -16px;
     column-gap: 2em;
     column-count: 1;
-
 
     @include mq(md) {
         column-count: 2;
@@ -43,5 +39,4 @@ display: block;
     margin-bottom: 0;
     display: inline-block;
     margin: 0 0 2em;
-    
 }

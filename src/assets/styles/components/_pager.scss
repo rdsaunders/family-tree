@@ -1,5 +1,4 @@
 .pager {
-
     &__title {
         font-size: 20px;
         font-size: 1.25rem;
@@ -45,7 +44,7 @@
             left: -6px;
         }
     }
-    
+
     &-item--next {
         float: right;
         text-align: right;
@@ -59,5 +58,4 @@
             right: -6px;
         }
     }
-
 }

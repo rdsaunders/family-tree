@@ -13,10 +13,10 @@
 }
 
 .summary-list {
-display: table;
-table-layout: fixed;
-width: 100%;
-margin: 0;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
 
     &__row {
         border-bottom: 1px solid #d8dde0;
@@ -33,14 +33,13 @@ margin: 0;
         overflow-wrap: break-word;
         word-wrap: break-word;
 
-
         @include mq(md) {
             border-bottom: 1px solid #d8dde0;
             display: table-cell;
             padding-bottom: 8px;
             padding-right: 24px;
-            padding-top: 8px;        }
-
+            padding-top: 8px;
+        }
     }
 
     &__key {
@@ -59,7 +58,4 @@ margin: 0;
             width: 50%;
         }
     }
-
 }
-
-

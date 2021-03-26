@@ -16,16 +16,11 @@
           </div>
           <p class="card__description">{{ post.data.description }}</p>
 
-            <p><time class="postlist-date" datetime="{{ post.date }}">{{ post.date }}</time></p>
+            {% if post.data.date %}<p><time class="postlist-date" datetime="{{ post.data.date }}">{{ post.data.date | dateToFormat('dd MMMM yyyy') }}</time></p>{% endif %}
             {% for tag in post.data.tags | filterTagList %}
-              <ul>
                 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                <li>
-                  <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-
+                  <a href="{{ tagUrl | url }}" class="tag tag--white">{{ tag }}</a>
+            {% endfor %}
         </div>
       </li>
     {% endfor %}
