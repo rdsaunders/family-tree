@@ -2,6 +2,9 @@
 layout: base
 ---
 <article class="container">
+
+
+
 <h1>{{ title }}</h1>
 <p>{{ date | dateToFormat('yyyy') }}-{{ deathDate | dateToFormat('yyyy') }}<p>
 
@@ -34,7 +37,7 @@ layout: base
     </div>
 </dl>
 
-<h2>Media</h2>
+{# <h2>Media</h2>
 
 <ul>
     <li>
@@ -146,7 +149,11 @@ layout: base
             </li>
         </ul>
     </li>
-</ul>
+</ul> #}
 </aside>
-
+<hr>
+{%- set nextPost = collections.person | getNextCollectionItem(page) %}
+{%- set previousPost = collections.person | getPreviousCollectionItem(page) %}
+{% include "pager.njk" %}
 </article>
+

@@ -1,0 +1,63 @@
+.pager {
+
+    &__title {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 1.4;
+        display: block;
+    }
+
+    &__page {
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 1.71429;
+        display: block;
+        text-decoration: underline;
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        width: 100%;
+
+        .pager-icon {
+            position: absolute;
+            top: -2px;
+        }
+    }
+
+    &-icon {
+        height: 34px;
+        width: 34px;
+    }
+
+    &-item--previous {
+        float: left;
+        text-align: left;
+        width: 50%;
+
+        .pager__title {
+            padding-left: 32px;
+        }
+
+        .pager-icon {
+            left: -6px;
+        }
+    }
+    
+    &-item--next {
+        float: right;
+        text-align: right;
+        width: 50%;
+
+        .pager__title {
+            padding-right: 32px;
+        }
+
+        .pager-icon {
+            right: -6px;
+        }
+    }
+
+}

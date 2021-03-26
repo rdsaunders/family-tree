@@ -1,3 +1,17 @@
+.list {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    list-style-type: none;
+    margin-top: 0;
+    padding-left: 0;
+
+    @include mq(md) {
+        margin-bottom: 24px;
+    }
+}
+
 .summary-list {
 display: table;
 table-layout: fixed;
@@ -47,3 +61,5 @@ margin: 0;
     }
 
 }
+
+

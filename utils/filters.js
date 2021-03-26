@@ -22,3 +22,5 @@ module.exports = {
         return chars.join('')
     }
 }
+
+

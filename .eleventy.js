@@ -60,6 +60,25 @@ module.exports = function (config) {
     // Deep-Merge
     config.setDataDeepMerge(true)
 
+    config.addFilter("featured", (collection = [], related = []) => {
+      return collection.filter(page => related.includes(page.filePathStem));
+    });
+
+    config.addFilter("filterTagList", tags => {
+      // should match the list in tags.njk
+      return (tags || []).filter(tag => ["all", "nav", "post", "posts", "tagList", "media"].indexOf(tag) === -1);
+    })
+
+    // Create an array of all tags
+    config.addCollection("tagList", function(collection) {
+      let tagSet = new Set();
+      collection.getAll().forEach(item => {
+        (item.data.tags || []).forEach(tag => tagSet.add(tag));
+      });
+
+      return [...tagSet];
+    });   
+    
     // Base Config
     return {
         dir: {
@@ -69,7 +88,7 @@ module.exports = function (config) {
             layouts: 'layouts',
             data: 'data'
         },
-        templateFormats: ['njk', 'md', '11ty.js'],
+        templateFormats: ['md', 'njk', 'html', 'liquid', '11ty.js'],
         htmlTemplateEngine: 'njk',
         markdownTemplateEngine: 'njk'
     }

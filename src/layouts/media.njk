@@ -1,7 +1,13 @@
 ---
 layout: base
 ---
+
 <article class="container | h-entry">
+
+{%- set nextPost = collections.media | getNextCollectionItem(page) %}
+{%- set previousPost = collections.media | getPreviousCollectionItem(page) %}
+{% include "pager.njk" %}
+
 <h1>{% if item.data.caption %}
         {{ item.data.caption }}
     {% else %}
@@ -9,26 +15,55 @@ layout: base
     {% endif %}
 </h1>
 {% for item in images %}
-    <img loading="lazy" src="{{ item }}" class="u-photo" width="600" />
+<figure class="image">
+    <img loading="lazy" src="{{ item }}" class="image__img u-photo" width="600" />
+        {% if caption %}
+        <figcaption class="image__caption">
+            {{ caption }}
+        </figcaption>
+        {% endif %}
+    </figure>
 {% endfor %}
-<dl>
-    {% if item.data.date %}
-    <dt>Date:</dt>
-    <dd>{{ date }}</dd>
-    {% endif %}
-    {% if item.data.location %}
-    <dt>Location:</dt>
-    <dd>{{ location }}</dd>
-    {% endif %}
-</dl>
-{{ caption }}
 
-<div>{{ description }}</div>
-<div>{{ transcription }}</div>
+<dl class="summary-list">
+    {% if date %}
+    <div class="summary-list__row">
+    <dt class="summary-list__key">Date:</dt>
+    <dd class="summary-list__value">{{ date }}</dd>
+    </div>
+    {% endif %}
+
+    {% if location %}
+    <div class="summary-list__row">
+    <dt class="summary-list__key">Location:</dt>
+    <dd class="summary-list__value">{{ location }}</dd>
+    </div>
+    {% endif %}
+    
+    {% if description %}
+    <div class="summary-list__row">
+    <dt class="summary-list__key">Description:</dt>
+    <dd class="summary-list__value">{{ description }}</dd>
+    </div>
+    {% endif %}
+    
+    {% if transcription %}
+    <div class="summary-list__row">
+    <dt class="summary-list__key">Transcription:</dt>
+    <dd class="summary-list__value">{{ transcription }}</dd>
+    </div>
+    {% endif %}
+    
+</dl>
+
+{% if relatedPeople %}
 <h2>Related people</h2>
 <ul>
 {% for item in relatedPeople %}
-    <li>{{ item }}</li>
+    <li><a href="{{ it }}">{{item}}</a></li>
 {% endfor %}
 </ul>
+{% endif %}
+
+
 </article>
