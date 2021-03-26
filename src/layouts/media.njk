@@ -62,7 +62,7 @@ layout: base
     <div class="summary-list__row">
     <dt class="summary-list__key">Tags:</dt>
     <dd class="summary-list__value">
-    {% for tag in tags %}
+    {% for tag in tags | filterTagList %}
         {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
         <a href="{{ tagUrl | url }}" class="tag tag--white">{{ tag }}</a>
     {% endfor %}

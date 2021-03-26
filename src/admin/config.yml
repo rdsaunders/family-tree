@@ -22,10 +22,10 @@ collections:
     summary: "{{title}}: {{date}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Birth date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "" }
-      - { label: "Birth place", name: "birthPlace", widget: "string" }
-      - { label: "Death date", name: "deathdate", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "" }
-      - { label: "Death place", name: "deathPlace", widget: "string" }
+      - { label: "Birth date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "", required: false }
+      - { label: "Birth place", name: "birthPlace", widget: "string", required: false }
+      - { label: "Death date", name: "deathdate", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "", required: false }
+      - { label: "Death place", name: "deathPlace", widget: "string", required: false }
       - widget: select
         label: "Gender"
         name: "gender"
@@ -43,6 +43,7 @@ collections:
       - label: "Images"
         name: "images"
         widget: "image"
+        required: false
         media_library:
           config:
             multiple: true
@@ -54,6 +55,7 @@ collections:
         search_fields: ["title"]
         value_field: "title"
         display_fields: ["title", "date"]
+        required: false
       - widget: select
         label: "Media type"
         name: "mediaType"
