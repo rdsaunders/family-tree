@@ -1,12 +1,11 @@
 .image {
     background: #fff;
 
-&__img {
-
-}
-&__caption {
-    padding: 1em;
-    font-style: italic;
-}
-
+    &__img {
+        max-width: 100%;
+    }
+    &__caption {
+        padding: 1em;
+        font-style: italic;
+    }
 }

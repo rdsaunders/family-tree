@@ -1,4 +1,6 @@
 .pager {
+display: flex;
+
     &__title {
         font-size: 20px;
         font-size: 1.25rem;
@@ -32,7 +34,6 @@
     }
 
     &-item--previous {
-        float: left;
         text-align: left;
         width: 50%;
 
@@ -46,7 +47,7 @@
     }
 
     &-item--next {
-        float: right;
+        margin-left: auto;
         text-align: right;
         width: 50%;
 
