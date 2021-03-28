@@ -5,5 +5,4 @@ birthPlace: Icklesham, Sussex, England
 deathDate: 1881-11-03
 deathPlace: Hastings, Sussex, England
 gender: Male
-
 ---

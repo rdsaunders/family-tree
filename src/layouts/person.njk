@@ -6,7 +6,7 @@ layout: base
 
 
 <h1>{{ title }}</h1>
-<p>{{ date | dateToFormat('yyyy') }}-{{ deathDate | dateToFormat('yyyy') }}<p>
+<p>{% if date %}{{ date | dateToFormat('yyyy') }}{% endif %}{% if deathDate %}-{{ deathDate | dateToFormat('yyyy') }}{% endif %}<p>
 
 <h2>Life facts</h2>
 <dl class="summary-list">
@@ -18,24 +18,30 @@ layout: base
         <dt class="summary-list__key">Gender</dt>
         <dd class="summary-list__value">{{ gender }}</dd>
     </div>
-
+    
+    {% if date %}
     <div class="summary-list__row">
         <dt class="summary-list__key">Birth</dt>
         <dd class="summary-list__value">{{ date | dateToFormat('dd MMMM yyyy') }} {% if birthPlace %}<br> {{ birthPlace }}{% endif %}</dd>
     </div>
-    
-    {% if item.data.marriage.date %}
-    <div class="summary-list__row">
-        <dt class="summary-list__key">Marriage</dt>
-        <dd class="summary-list__value">{{ marriage.date }} <br> {{ marriage.place }}</dd>
-    </div>
     {% endif %}
-
+    
+    {% if deathDate %}
     <div class="summary-list__row">
         <dt class="summary-list__key">Living status</dt>
-        <dd class="summary-list__value">Living <br> {{ deathDate | dateToFormat('dd MMMM yyyy') }} {% if deathPlace %}<br> {{ deathPlace }}{% endif %}</dd>
+        <dd class="summary-list__value">{% if not deathDate %} Living <br> {% endif %}{% if deathDate %}{{ deathDate | dateToFormat('dd MMMM yyyy') }}{% endif %} {% if deathPlace %}<br> {{ deathPlace }}{% endif %}</dd>
     </div>
+    {% else %}
+        <div class="summary-list__row">
+        <dt class="summary-list__key">Living status</dt>
+        <dd class="summary-list__value">Living</dd>
+    </div>
+    {% endif %}
 </dl>
+
+{% if content %}
+{{ content | safe }}
+{% endif %}
 
 {# <h2>Media</h2>
 

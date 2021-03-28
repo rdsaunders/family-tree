@@ -19,11 +19,13 @@
     padding-top: 4px;
     text-decoration: none;
     border-radius: 3px;
+    margin-bottom: 0.375em;
+    margin-right: 0.375em;
 
-    @include mq(md) {
+
+    @include mq(lg) {
         font-size: 1rem;
         line-height: 1.2;
-        margin-bottom: 0.375em;
     }
 }
 

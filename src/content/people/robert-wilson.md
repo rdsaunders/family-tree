@@ -6,5 +6,4 @@ birthPlace: Icklesham, Sussex, England
 deathDate: 1815-04-24
 deathPlace: Icklesham, Sussex, England
 gender: Male
-
 ---
