@@ -1,12 +1,12 @@
 ---
+deathdate: ""
 gender: Male
-father: []
+deathDate: null
 mother: []
+date: 1898-05-15T00:00:00.000Z
+birthPlace: Portsea Island, Hanpshire, England
+dobEst: ""
 title: Charles Ward
-date: 
-dobEst: ''
-birthPlace: ''
-deathDate: 
-deathPlace: ''
-
+deathPlace: ""
+father: []
 ---
