@@ -1,11 +1,11 @@
 ---
+deathdate: ""
 gender: Female
-father: []
+deathDate: null
 mother: []
 title: Louisa Wilson
-date: 
-birthPlace: ''
-deathDate: 
-deathPlace: ''
-
+date: 1865-03-20T00:00:00.000Z
+birthPlace: Icklesham, Sussex, England
+deathPlace: ""
+father: []
 ---
