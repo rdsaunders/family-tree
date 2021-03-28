@@ -60,25 +60,44 @@ module.exports = function (config) {
     // Deep-Merge
     config.setDataDeepMerge(true)
 
-    config.addFilter("featured", (collection = [], related = []) => {
-      return collection.filter(page => related.includes(page.filePathStem));
-    });
+    config.addFilter('featured', (collection = [], related = []) => {
+        return collection.filter((page) => related.includes(page.filePathStem))
+    })
 
-    config.addFilter("filterTagList", tags => {
-      // should match the list in tags.njk
-      return (tags || []).filter(tag => ["all", "nav", "post", "posts", "tagList", "media", "person"].indexOf(tag) === -1);
+    config.addFilter('filterTagList', (tags) => {
+        // should match the list in tags.njk
+        return (tags || []).filter(
+            (tag) =>
+                [
+                    'all',
+                    'nav',
+                    'post',
+                    'posts',
+                    'tagList',
+                    'media',
+                    'person'
+                ].indexOf(tag) === -1
+        )
     })
 
     // Create an array of all tags
-    config.addCollection("tagList", function(collection) {
-      let tagSet = new Set();
-      collection.getAll().forEach(item => {
-        (item.data.tags || []).forEach(tag => tagSet.add(tag));
-      });
+    config.addCollection('tagList', function (collection) {
+        let tagSet = new Set()
+        collection.getAll().forEach((item) => {
+            ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
+        })
 
-      return [...tagSet];
-    });   
-    
+        return [...tagSet]
+    })
+
+    config.addCollection('mediaByTitle', (collection) =>
+        collection.getFilteredByGlob('src/content/media/*.md').sort((a, b) => {
+            if (a.data.title > b.data.title) return -1
+            else if (a.data.title < b.data.title) return 1
+            else return 0
+        })
+    )
+
     // Base Config
     return {
         dir: {
