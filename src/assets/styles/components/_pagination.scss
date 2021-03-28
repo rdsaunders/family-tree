@@ -1,0 +1,20 @@
+.pagination {
+    &__item {
+        display: inline-block;
+        list-style: none;
+    }
+
+    &__link {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+    }
+
+    [aria-current] {
+        color: #0b0c0c;
+        font-weight: 700;
+        border: none;
+        pointer-events: none;
+        cursor: default;
+    }
+}

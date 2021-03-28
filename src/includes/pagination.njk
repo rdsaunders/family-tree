@@ -1,12 +1,30 @@
-<nav aria-labelledby="collection-nav">
-  <h2 id="collection-nav">Collection navigation</h2>
-  <ol>
-    <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
-    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
-{%- endfor %}
-    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-    <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
+<nav role="navigation" aria-label="Pagination">
+  <ol class="pagination">
+    <li class="pagination__item">
+      {% if page.url != pagination.href.first %}
+        <a class="pagination__link" href="{{ pagination.href.first }}">First</a>
+      {% else %}First{% endif %}
+    </li>
+    <li class="pagination__item">
+      {% if pagination.href.previous %}
+        <a class="pagination__link" href="{{ pagination.href.previous }}" aria-label="Previous page">
+          <span aria-hidden="true" role="presentation">&laquo;</span> Previous</a>
+      {% else %}Previous{% endif %}
+    </li>
+    {%- for pageEntry in pagination.pages %}
+      <li class="pagination__item">
+        <a class="pagination__link" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} aria-label="Page {{ loop.index }}">{{ loop.index }}</a>
+      </li>
+    {%- endfor %}
+    <li class="pagination__item">
+      {% if pagination.href.next %}
+        <a class="pagination__link" href="{{ pagination.href.next }}">Next <span aria-hidden="true" role="presentation">&raquo;</span></a>
+      {% else %}Next{% endif %}
+    </li>
+    <li class="pagination__item">
+      {% if page.url != pagination.href.last %}
+        <a class="pagination__link" href="{{ pagination.href.last }}">Last</a>
+      {% else %}Last{% endif %}
+    </li>
   </ol>
 </nav>
