@@ -33,7 +33,7 @@ layout: base
     {% if date %}
     <div class="summary-list__row">
     <dt class="summary-list__key">Date:</dt>
-    <dd class="summary-list__value">{{ date | dateToFormat('dd-MM-yyyy')}}</dd>
+    <dd class="summary-list__value">{{ date | dateToFormat('dd MMMM yyyy') }}</dd>
     </div>
     {% endif %}
 
