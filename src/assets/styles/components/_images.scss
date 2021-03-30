@@ -1,8 +1,11 @@
 .image {
     background: #fff;
+    margin-bottom: 2em;
 
     &__img {
         max-width: 100%;
+        max-height: 80vh;
+        width: auto;
     }
     &__caption {
         padding: 1em;
