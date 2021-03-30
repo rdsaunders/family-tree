@@ -1,11 +1,11 @@
 ---
+deathdate: ""
 gender: Female
-father: src/content/people/william-lawrence-wilson.md
+deathDate: null
 mother: []
 title: Margaret Ann Wilson
-date: 
-birthPlace: ''
-deathDate: 
-deathPlace: ''
-
+date: 1918-01-31T00:00:00.000Z
+birthPlace: Isle of Wight, England
+deathPlace: ""
+father: src/content/people/william-lawrence-wilson.md
 ---
