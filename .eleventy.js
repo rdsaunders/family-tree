@@ -60,10 +60,6 @@ module.exports = function (config) {
     // Deep-Merge
     config.setDataDeepMerge(true)
 
-    config.addFilter('featured', (collection = [], related = []) => {
-        return collection.filter((page) => related.includes(page.filePathStem))
-    })
-
     config.addFilter('filterTagList', (tags) => {
         // should match the list in tags.njk
         return (tags || []).filter(
@@ -89,6 +85,17 @@ module.exports = function (config) {
 
         return [...tagSet]
     })
+
+    // Create an array of all tags
+    config.addCollection('paperIdentifiers', function (collection) {
+        let tagSet = new Set()
+        collection.getAll().forEach((item) => {
+            ;(item.data.paperId || []).forEach((tag) => tagSet.add(tag))
+        })
+
+        return [...tagSet]
+    })
+
 
     config.addCollection('mediaByTitle', (collection) =>
         collection.getFilteredByGlob('src/content/media/*.md').sort((a, b) => {

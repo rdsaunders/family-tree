@@ -72,14 +72,14 @@ layout: base
     
 </dl>
 
-{% if relatedPeople|length %}
-<h2>Related people</h2>
-<ul>
-{% for item in relatedPeople %}
-    <li><a href="{{ it }}">{{item}}</a></li>
-{% endfor %}
-</ul>
-{% endif %}
+<aside>
+  <h2>In the photo</h2>
+  <ul>
+    {%- for item in relatedPeople %}
+    <li>{{ item }}</li>
+    {%- endfor %}
+  </ul>
+</aside>
 
 
 
