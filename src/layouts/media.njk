@@ -20,7 +20,7 @@ layout: base
 </h1>
 {% for item in images %}
 <figure class="image">
-    <img loading="lazy" src="{{ item }}" class="image__img u-photo" width="600" />
+    <img loading="lazy" src="{{ meta.cloudinary_url }}image/upload/w_1800,f_auto/family_tree{{ item }}" class="image__img u-photo" width="1200" />
         {% if caption %}
         <figcaption class="image__caption">
             {{ caption }}
