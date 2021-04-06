@@ -10,7 +10,7 @@ eleventyNavigation:
 ---
 
 <div class="container">
-    <h1>{{ title }}</h1>
+    <h1 class="page-title">{{ title }}</h1>
 
 <ul class="grid--masonry">
     {% for item in pagination.items %}
@@ -32,7 +32,7 @@ eleventyNavigation:
         </li>
     {% endfor %}
 </ul>
-<div class="u-align-center u-mb2">
+<div class="u-align-center u-mt2 u-mb2">
 {% include "pagination.njk" %}
 </div>
 </div>

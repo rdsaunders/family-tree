@@ -20,7 +20,7 @@ permalink: /tags/{{ tag | slug }}/
 
 <div class="container">
 
-<h1>Tagged “{{ tag }}”</h1>
+<h1 class="page-title">Tagged “{{ tag }}”</h1>
 
 {% set postslist = collections[ tag ] %}
 {% include "postslist.njk" %}

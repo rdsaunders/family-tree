@@ -8,7 +8,7 @@
     padding-left: 0;
 
     @include mq(md) {
-        margin-bottom: 24px;
+        margin-bottom: $spacing-y;
     }
 }
 
@@ -17,6 +17,7 @@
     table-layout: fixed;
     width: 100%;
     margin: 0;
+    margin-bottom: $spacing-y;
 
     &__row {
         border-bottom: 1px solid #d8dde0;

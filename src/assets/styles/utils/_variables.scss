@@ -34,14 +34,22 @@ $gray: #818a91;
 $gray-light: #eceeef;
 $gray-lightest: #f7f7f9;
 
+$heritage-white: #fdf9f1;
+$heritage-cream: #EFEDE9;
+$heritage-blue: #22404c;
+$heritage-red: #e65025;
+$heritage-orange: #fca914;
+$heritage-cyan: #35b8da;
+$heritage-coal: #595959;
 // Brand Colors
 
-$brand-red: #fc6767;
+$brand-red: $heritage-red;
 
 // Color Mappings
 
-$bg-color: #fff;
-$text-color: $gray-darkest;
+$bg-color: $heritage-white;
+$text-color: $heritage-coal;
+$heading-color: $heritage-blue;
 $brand-color-primary: $brand-red;
 $brand-color-primary-offset: darken($brand-red, 6%);
 
@@ -81,3 +89,18 @@ $box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
 $box-shadow-elevated: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
 
 $border-radius: 0.25rem;
+
+
+$nav-bg-color: $heritage-blue;
+$nav-text-color: $heritage-white;
+$nav-border-color: rgba($heritage-white,0.5);
+
+$tag-bg-color: $heritage-blue;
+$tag-border-color: $heritage-blue;
+$tag-text-color: $gray-lightest;
+
+$header-bg-color: $heritage-blue;
+$header-text-color: $heritage-white;
+
+$footer-bg-color: $heritage-blue;
+$footer-text-color: $heritage-white;

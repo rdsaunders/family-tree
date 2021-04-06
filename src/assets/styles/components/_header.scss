@@ -1,5 +1,32 @@
 .header {
     padding: $spacing-y 0;
+    background-color: $header-bg-color;
+    color: $header-text-color;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3em;
+
+    &:after {
+        background: inherit;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    &:after {
+        bottom: 0;
+        transform: skewY(-1.5deg);
+        transform-origin: 100% 0;
+    }
+
+    a {
+        color: $header-text-color;
+    }
 
     &__inner {
         display: flex;

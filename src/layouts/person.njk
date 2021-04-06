@@ -2,11 +2,15 @@
 layout: base
 ---
 <article class="container">
-
+{%- set nextPost = collections.person | getNextCollectionItem(page) %}
+{%- set previousPost = collections.person | getPreviousCollectionItem(page) %}
+{% include "pager.njk" %}
+<hr>
 
 
 <h1>{{ title }}</h1>
-<p>{% if date %}{{ date | dateToFormat('yyyy') }}{% endif %}{% if deathDate %}-{{ deathDate | dateToFormat('yyyy') }}{% endif %}<p>
+
+<p class="u-mt0">{% if date | dateToFormat('yyyy') %}{{ date | dateToFormat('yyyy') }}{% endif %}{% if deathDate %}-{{ deathDate | dateToFormat('yyyy') }}{% endif %}<p>
 
 <h2>Life facts</h2>
 <dl class="summary-list">
@@ -38,6 +42,85 @@ layout: base
     </div>
     {% endif %}
 </dl>
+{%- set dobYear = date | dateToFormat('yyyy') -%}
+
+<h2>Evidence</h2>
+
+
+<dl class="summary-list">
+	<div class="summary-list__row">
+        <dt class="summary-list__key">Baptism</dt>
+        <dd class="summary-list__value"><span class="tag">May be available</span></td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">Birth Certificate</dt>
+        <dd class="summary-list__value">{% if dobYear < 1837 %}Birth registration only began in 1837.{% else %}<span class="tag">May be available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1841 Census</dt>
+        <dd class="summary-list__value">{% if dobYear <= 1841 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1851 Census</dt>
+        <dd class="summary-list__value">{% if dobYear <= 1851 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1861 Census</dt>
+        <dd class="summary-list__value">{% if dobYear <= 1861 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1871 Census</dt>
+    <dd class="summary-list__value">{% if dobYear <= 1871 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1881 Census</dt>
+    <dd class="summary-list__value">{% if dobYear <= 1881 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1891 Census</dt>
+    <dd class="summary-list__value">{% if dobYear <= 1891 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1901 Census</dt>
+    <dd class="summary-list__value">{% if dobYear <= 1901 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1911 Census</dt>
+    <dd class="summary-list__value">{% if dobYear <= 1911 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1921 Census</dt>
+    <dd class="summary-list__value">{% if dobYear <= 1921 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+	<div class="summary-list__row">
+        <dt class="summary-list__key">1939 Register</dt>
+    <dd class="summary-list__value">{% if dobYear <= 1939 %}<span class="tag">May be available</span>{% else %}<span class="tag tag--white">Not available</span>{% endif %}</td>
+    </dd>
+    </div>
+    <div class="summary-list__row">
+        <dt class="summary-list__key">Death Certificate</dt>
+        <dd class="summary-list__value">{% if dobYear < 1837 %}Death registration only began in 1837.{% else %}<span class="tag">May be available</span>{% endif %}</td>
+    </dd>
+    </div>
+        <div class="summary-list__row">
+        <dt class="summary-list__key">Burial record</dt>
+        <dd class="summary-list__value"><span class="tag">May be available</span></td>
+    </dd>
+    </div>
+</dl>
+
+
 
 {% if content %}
 {{ content | safe }}
@@ -157,9 +240,5 @@ layout: base
     </li>
 </ul> #}
 </aside>
-<hr>
-{%- set nextPost = collections.person | getNextCollectionItem(page) %}
-{%- set previousPost = collections.person | getPreviousCollectionItem(page) %}
-{% include "pager.njk" %}
 </article>
 

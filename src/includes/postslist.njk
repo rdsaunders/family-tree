@@ -1,6 +1,6 @@
-<ol reversed class="card-group" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+<ol reversed class="grid--masonry" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
   {% for post in postslist | reverse %}
-    <li class="card-group__item grid-column-one-third">
+    <li>
       <div class="card">
 
         <img class="card__img" src="{{ meta.cloudinary_url }}image/upload/w_480,f_auto/family_tree{{ post.data.images[0] }}" width="480" loading="lazy"/>
