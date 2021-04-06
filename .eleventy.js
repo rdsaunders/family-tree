@@ -96,7 +96,6 @@ module.exports = function (config) {
         return [...tagSet]
     })
 
-
     config.addCollection('mediaByTitle', (collection) =>
         collection.getFilteredByGlob('src/content/media/*.md').sort((a, b) => {
             if (a.data.title > b.data.title) return -1
@@ -104,6 +103,11 @@ module.exports = function (config) {
             else return 0
         })
     )
+    // Filter related content based on front matter including its order
+    config.addFilter('related', (collection = [], related = []) => {
+        const filtered = collection.filter((page) => related.includes(page.data.title))
+        return filtered.sort( (a, b) => related.indexOf(a.data.title) - related.indexOf(b.data.title));
+    })
 
     // Base Config
     return {

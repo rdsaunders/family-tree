@@ -69,19 +69,24 @@ layout: base
     </dd>
     </div>
     {% endif %}
+
+    <div class="summary-list__row">
+    <dt class="summary-list__key">Original scan:</dt>
+    <dd class="summary-list__value">{% for item in images %}<a href="{{ item }}">Download</a>{% endfor %}</dd>
+    </div>
     
 </dl>
 
-<aside>
-  <h2>Linked to</h2>
-  <ul>
-    {%- for item in relatedPeople %}
-    <li>{{ item }}</li>
-    {%- endfor %}
-  </ul>
+{% if relatedPeople %}
+<aside class="related-articles u-mt2">
+<h2>Related to</h2>
+    <ul>
+    {%- for item in collections.person | related(relatedPeople) -%}
+            <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+    {%- endfor -%}
+    </ul>
 </aside>
-
-
+{% endif %}
 
 </article>
 </div>

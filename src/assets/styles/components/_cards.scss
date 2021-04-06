@@ -40,3 +40,19 @@
     display: inline-block;
     margin: 0 0 2em;
 }
+
+$w: minmax(Min(20em, 100%), 1fr);
+$s: 1em;
+
+.grid--masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, $w);
+      grid-template-rows: masonry;
+      justify-content: center;
+      grid-gap: $s;
+      
+      > * { align-self: start }
+      
+    //   > :first-child { grid-column: 1/ -1 }
+  }
+  
