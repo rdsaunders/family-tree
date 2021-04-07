@@ -36,3 +36,11 @@ body {
     margin-right: auto;
     max-width: $container-max-width;
 }
+
+.page {
+    padding-top: $spacing-y;
+
+    @include mq(lg) {
+        padding-top: $spacing-y * 2;
+    }
+}
