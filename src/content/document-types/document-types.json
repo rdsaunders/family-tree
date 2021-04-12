@@ -1,0 +1,4 @@
+{
+    "tags": "document-type",
+    "permalink": "document-types/{{ title | slug }}/index.html"
+}

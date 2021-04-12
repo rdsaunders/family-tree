@@ -70,7 +70,7 @@ collections:
       - { label: "Caption", name: "caption", widget: "string", required: false }
       - { label: "Date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "", required: false}
       - { label: "Location", name: "location", widget: "string", required: false}
-      - { label: "Description", name: "description", widget: "string", required: false}
+      - { label: "Description", name: "description", widget: "markdown", required: false}
       - { label: "Transcription", name: "transcription", widget: "string", required: false}
       - label: "Similar to"
         name: "similarTo"
@@ -81,3 +81,56 @@ collections:
         display_fields: ["title", "date"]
         required: false
         multiple: true
+  - label: "Documents"
+    label_singular: "document"
+    name: "documents"
+    folder: "src/content/documents"
+    summary: "{{title}}: {{caption}}"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Reference ID", name: "title", widget: "string" }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        summary: '{{fields.image}}'
+        collapsed: false
+        required: false
+        field: {label: Image, name: image, widget: image}
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Comma separated keywords that describe the document." }
+      - label: "Linked to"
+        name: "relatedPeople"
+        widget: "relation"
+        collection: "people"
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title", "date"]
+        required: false
+        multiple: true
+        hint: "Link to people that you can identify in the document"
+      - label: "Document type"
+        name: "documentType"
+        widget: "relation"
+        collection: "document-type"
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title"]
+        required: true
+        hint: "Select the type of document that this relates to."
+      - { label: "Caption", name: "caption", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "DD MMM YYYY", time_format: false, default: "", required: false}
+      - { label: "Location", name: "location", widget: "string", required: false}
+      - { label: "Description", name: "description", widget: "markdown", required: false}
+      - { label: "Transcription", name: "transcription", widget: "markdown", required: false}
+  - label: "Document types"
+    name: "document-type"
+    label_singular: "type"
+    folder: "src/content/document-types"
+    create: true
+    editor:
+      preview: false
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown", required: false }
