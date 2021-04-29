@@ -3,7 +3,11 @@
     <li>
       <div class="card">
 
-        <img class="card__img" src="{{ meta.cloudinary_url }}image/upload/w_480,f_auto/family_tree{{ post.data.images[0] }}" width="480" loading="lazy"/>
+            <img class="card__img" loading="lazy" srcset="{{ site.cloudinary_url }}image/upload/w_480,f_auto/family_tree{{ post.data.images[0] }} 480w,
+                {{ meta.cloudinary_url }}image/upload/w_512,f_auto/family_tree{{ item.data.images[0] }} 512w,
+                {{ meta.cloudinary_url }}image/upload/w_768,f_auto/family_tree{{ item.data.images[0] }} 768w,
+                {{ meta.cloudinary_url }}image/upload/w_1400,f_auto/family_tree{{ item.data.images[0] }} 1400w"
+            src="{{ meta.cloudinary_url }}image/upload/w_320,f_auto/family_tree{{ item.data.images[0] }}" />
 
         <div class="card__content">
           <div class="card__heading">
