@@ -71,19 +71,20 @@ module.exports = function (config) {
                     'posts',
                     'tagList',
                     'media',
-                    'person'
+                    'person',
+                    'document-type'
                 ].indexOf(tag) === -1
         )
     })
 
-    // Create an array of all tags
+    // Create an array of all tags, sort alphabetically and reverse the order
     config.addCollection('tagList', function (collection) {
         let tagSet = new Set()
         collection.getAll().forEach((item) => {
             ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
         })
-
-        return [...tagSet]
+        
+        return [...tagSet].sort((a, b) => b.localeCompare(a)).reverse()
     })
 
     // Create an array of all tags
@@ -107,6 +108,11 @@ module.exports = function (config) {
     config.addFilter('related', (collection = [], related = []) => {
         const filtered = collection.filter((page) => related.includes(page.data.title))
         return filtered.sort( (a, b) => related.indexOf(a.data.title) - related.indexOf(b.data.title));
+    })
+
+    // Filter related content based on front matter including its order
+    config.addFilter('relatedMedia', (collection = [], related = []) => {
+        const filtered = collection.filter((page) => related.includes(page.data.relatedPeople))
     })
 
     // Base Config
