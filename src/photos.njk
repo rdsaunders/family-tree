@@ -16,7 +16,7 @@ eleventyNavigation:
     {% for item in pagination.items %}
         <li>
           <div class="card">
-            <img class="card__img" loading="lazy" srcset="{{ site.cloudinary_url }}image/upload/w_320,f_auto/family_tree{{ item.data.images[0] }} 480w,
+            <img class="card__img" loading="lazy" srcset="{{ meta.cloudinary_url }}image/upload/w_320,f_auto/family_tree{{ item.data.images[0] }} 480w,
                 {{ meta.cloudinary_url }}image/upload/w_512,f_auto/family_tree{{ item.data.images[0] }} 512w,
                 {{ meta.cloudinary_url }}image/upload/w_768,f_auto/family_tree{{ item.data.images[0] }} 768w,
                 {{ meta.cloudinary_url }}image/upload/w_1400,f_auto/family_tree{{ item.data.images[0] }} 1400w"
