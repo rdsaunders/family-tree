@@ -72,7 +72,13 @@ layout: base
 
     <div class="summary-list__row">
     <dt class="summary-list__key">Original scan:</dt>
-    <dd class="summary-list__value">{% for item in images %}<a href="{{ item }}">Download</a>{% endfor %}</dd>
+    <dd class="summary-list__value">
+        <ul class="link-list">
+        {% for item in images %}
+            <li><a href="{{ item }}">Download</a></li>
+        {% endfor %}
+        </ul>
+    </dd>
     </div>
     
 </dl>

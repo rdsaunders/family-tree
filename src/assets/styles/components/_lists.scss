@@ -60,3 +60,12 @@
         }
     }
 }
+
+
+.link-list {
+
+    li {
+        display: inline-block;
+        padding-right: $spacing-x / 4;
+    }
+}
